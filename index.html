@@ -59,11 +59,11 @@
             }
 
             .skill-category h3 {
-                color: #2c3e50;
+                color: #000;
                 font-size: 18px;
                 font-weight: 600;
                 margin-bottom: 15px;
-                border-bottom: 2px solid #3498db;
+                border-bottom: 2px solid #000;
                 padding-bottom: 10px;
             }
 
@@ -74,7 +74,7 @@
             }
 
             .skill-items strong {
-                color: #2c3e50;
+                color: #000;
                 font-weight: 600;
             }
 
@@ -246,6 +246,11 @@
 										<li>
 											<a href="https://www.linkedin.com/in/kaushik-kumar-9a629b212/">
 												<i  class="fa fa-linkedin" aria-hidden="true"></i>
+											</a>
+										</li><!-- / li -->
+										<li>
+											<a href="https://www.instagram.com/kaushikk.__/">
+												<i  class="fa fa-instagram" aria-hidden="true"></i>
 											</a>
 										</li><!-- / li -->
 
@@ -915,7 +920,7 @@
 								<div class="recommendation-info">
 									<h3>Dr. ETH Roman Pawel Klis</h3>
 									<p>Professor, ETH Zurich</p>
-									<span class="university-badge">ETH Zurich</span>
+									<span class="university-badge">ETH Zurich, Switzerland</span>
 								</div>
 							</div>
 							<div class="recommendation-content">
@@ -1016,7 +1021,7 @@
 .recommendations .section-heading h2 {
 	font-size: 40px;
 	font-weight: 700;
-	color: #2c3e50;
+	color: #000;
 	margin-bottom: 20px;
 }
 
@@ -1033,7 +1038,7 @@
 	margin-bottom: 30px;
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 	transition: all 0.3s ease;
-	border-left: 5px solid #733f3f;
+	border-left: 5px solid #5b3e31;
 }
 
 .single-recommendation:hover {
@@ -1050,7 +1055,7 @@
 .recommendation-icon {
 	width: 60px;
 	height: 60px;
-	background: linear-gradient(135deg, #733f3f, #733f3f);
+	background: linear-gradient(135deg, #5b3e31, #5b3e31);
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
@@ -1067,7 +1072,7 @@
 .recommendation-info h3 {
 	font-size: 20px;
 	font-weight: 600;
-	color: #2c3e50;
+	color: #000;
 	margin-bottom: 5px;
 }
 
@@ -1079,7 +1084,7 @@
 
 .university-badge {
 	background: #e8f4fd;
-	color: #733f3f;
+	color: #5b3e31;
 	padding: 4px 12px;
 	border-radius: 20px;
 	font-size: 12px;
@@ -1088,7 +1093,7 @@
 
 .recommendation-content p {
 	font-size: 15px;
-	color: #555;
+	color: #000;
 	line-height: 1.6;
 	margin-bottom: 20px;
 }
@@ -1098,7 +1103,7 @@
 }
 
 .download-btn {
-	background: linear-gradient(135deg, #733f3f, #733f3f);
+	background: linear-gradient(135deg, #5b3e31, #5b3e31);
 	color: #fff;
 	padding: 12px 25px;
 	border-radius: 25px;
@@ -1112,11 +1117,12 @@
 }
 
 .download-btn:hover {
-	background: linear-gradient(135deg, #733f3f, #733f3f);
-	color: #fff;
-	text-decoration: none;
-	transform: translateY(-2px);
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	background: linear-gradient(135deg, #8b5a3c, #8b5a3c) !important;
+	color: #fff !important;
+	text-decoration: none !important;
+	transform: scale(1.2) !important;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+	border: 2px solid #000 !important;
 }
 
 .download-btn i {
@@ -1347,7 +1353,7 @@
 						<div class="col-md-offset-1 col-md-5 col-sm-6">
 							<div class="single-contact-box">
 								<div class="contact-form">
-									<form action="mailto:kaushikkumar.208@gmail.com" method="post" enctype="text/plain">
+									<form id="contactForm">
 										<div class="row">
 											<div class="col-sm-6 col-xs-12">
 												<div class="form-group">
@@ -1416,6 +1422,11 @@
 												<i  class="fa fa-linkedin" aria-hidden="true"></i>
 											</a>
 										</li><!-- / li -->
+										<li>
+											<a href="https://www.instagram.com/kaushikk.__/">
+												<i  class="fa fa-instagram" aria-hidden="true"></i>
+											</a>
+										</li><!-- / li -->
 									</ul><!--/ul-->
 								</div><!--/.hm-foot-icon-->
 							</div><!--/.single-contact-box-->
@@ -1482,6 +1493,28 @@
 
         <!--Custom JS-->
         <script src="assets/js/custom.js"></script>
+
+        <!-- Contact Form Handler -->
+        <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('comment').value;
+
+            // Create mailto link with just the message
+            const mailtoLink = `mailto:kaushikkumar.208@gmail.com?subject=${encodeURIComponent(subject || 'Contact from Portfolio')}&body=${encodeURIComponent(message)}`;
+
+            // Open email client
+            window.location.href = mailtoLink;
+
+            // Show success message
+            alert('Your email client will open with the message pre-filled. Please send the email from there.');
+        });
+        </script>
 
     </body>
 
